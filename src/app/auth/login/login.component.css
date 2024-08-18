@@ -3,6 +3,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    background-image: linear-gradient(to bottom right, #ff1bfc, #a698ff);
 }
 
 .custom {
