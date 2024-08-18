@@ -4,6 +4,7 @@ import { JwtModule } from "@auth0/angular-jwt";
 import { routes } from './app.routes';
 import { provideHttpClient, withInterceptors, withInterceptorsFromDi } from '@angular/common/http';
 import { spinnerInterceptor } from './interceptors/spinner.interceptor';
+import { apiErrorHandlerInterceptor } from './interceptors/api-error-handler.interceptor';
 
 export function tokenGetter() {
   return localStorage.getItem("access_token");
@@ -22,7 +23,7 @@ export const appConfig: ApplicationConfig = {
       }),
     ),
     provideHttpClient(
-      withInterceptors([spinnerInterceptor]),
+      withInterceptors([spinnerInterceptor,apiErrorHandlerInterceptor]),
       withInterceptorsFromDi()
     )
   ]

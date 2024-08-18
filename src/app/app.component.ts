@@ -13,13 +13,6 @@ import { SpinnerService } from './interceptors/spinner.service';
 export class AppComponent {
   title = 'fresh-app';
   
-  showSpinner = false;
   constructor(public spinnerService: SpinnerService) {}
-
-  ngOnInit() {
-    this.spinnerService.isShowSpinner.subscribe(r => {
-      this.showSpinner = r
-    })
-  }
 
 }
